@@ -1,0 +1,58 @@
+<div class="card-container">
+  <div class="title">Card Generator</div>
+  <p class="content">Hello there this is a card!</p>
+</div>
+<style type="text/css">
+  .card-container {
+    box-shadow: 18px 38px 38px 0px rgba(0.3, 0.3, 38, 0.3);
+    padding: 24px 25px 25px 25px;
+    border-top: 20px solid #cc966a;
+    border-right: 0px solid #000000;
+    border-bottom: 0px solid #000000;
+    border-left: 0px solid #000000;
+    border-radius: 40px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    height: auto;
+    width: 300px;
+    background-color: #fffbdb;
+
+  }
+
+  .card-container>.title {
+    font-size: 39px;
+    text-transform: capitalize;
+    position: relative;
+    padding-bottom: 25px;
+    margin-bottom: .8em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 250px;
+    font-weight: 640;
+    font-family: Poppins;
+    color: #b37f17;
+
+  }
+
+  .card-container>.content {
+    font-family: Poppins;
+    color: #5e4e0d;
+    font-weight: 600;
+    font-size: 18px;
+
+  }
+
+  .card-container>.title::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    border-radius: 10px;
+    background-color: #1e5799;
+    bottom: 0;
+    left: 0;
+  }
+</style>

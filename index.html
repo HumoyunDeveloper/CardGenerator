@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Generator</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body class="gradient">
+    <div class="wrapper">
+        <div class="scroller">
+            <div class="card">
+                <div class="title">Card Generator</div>
+                <p>Hello There! This is a Card Generator. Feel free to edit!</p>
+                <button class="button" id="edit_btn" data-state="false">Edit</button>
+                <div id="edit">
+                    <div class="text">
+                        <div class="title">Edit Content:</div>
+                        <p>For Title: </p>
+                        <input type="text" id="titleText" placeholder="Type Here...">
+                        <p>For Paragraph: </p>
+                        <input type="text" id="contentText" placeholder="Type Here...">
+                    </div><br>
+                    <div class="box-shadow">
+                        <div class="title">Box-Shadow</div>
+                        <label>
+                            <p>X: <span id="x_value"></span></p>
+                            <input type="range" id="x_inp" max="50" step="1">
+                        </label>
+                        <label>
+                            <p>Y: <span id="y_value"></span></p>
+                            <input type="range" id="y_inp" max="50" step="1">
+                        </label>
+                        <label>
+                            <p>BLUR: <span id="blur_value"></span></p>
+                            <input id="blur_inp" type="range" max="50" step="1">
+                        </label>
+                        <label>
+                            <p>SPREAD: <span id="spread_value"></span></p>
+                            <input id="spread_inp" type="range" max="50" step="1">
+                        </label><br><br>
+                        <label>
+                            <p>RGBA: <span id="rgba_value"></span></p>
+                            <p>R:<input type="number" id="r_inp" max="255" min="0" /></p>
+                            <p>G:<input type="number" id="g_inp" max="255" min="0" /></p>
+                            <p>B:<input type="number" id="b_inp" max="255" min="0" /></p>
+                            <p>A:<input type="number" id="a_inp" max="255" min="0" /></p>
+                        </label>
+                    </div><br>
+                    <div class="padding">
+                        <div class="title">Padding</div>
+                        <p>Padding Top: <span></span><input type="range" id="padding_top_inp" max="100" min="0" /></p>
+                        <p>Padding Right: <span></span><input type="range" id="padding_right_inp" max="100" min="0" />
+                        </p>
+                        <p>Padding Bottom: <span></span><input type="range" id="padding_bottom_inp" max="100" min="0" />
+                        </p>
+                        <p>Padding Left: <span></span><input type="range" id="padding_left_inp" max="100" min="0" /></p>
+                    </div>
+                    <br>
+                    <div class="border">
+                        <div class="title">Border</div>
+                        <p>Border Enabled: &nbsp; <input type="checkbox" id="border_enabled" /></p>
+                        <div id="ifborderenabled">
+                            <p>Border Top: &nbsp; <input type="checkbox" id="border_top_enabled" /></p>
+                            <div id="border_top_group" class="group">
+                                <p>Width: <span></span><input type="range" id="border_top_width" max="20" step="1"
+                                        min="0" /></p>
+                                <p>Color: <span></span><input type="color" id="border_top_color" /></p>
+                            </div>
+                            <p>Border Right: &nbsp; <input type="checkbox" id="border_right_enabled" /></p>
+                            <div id="border_right_group" class="group">
+                                <p>Width: <span></span><input type="range" id="border_right_width" step="1" max="20"
+                                        min="0" /></p>
+                                <p>Color: <span></span><input type="color" id="border_right_color" /></p>
+                            </div>
+                            <p>Border Bottom: &nbsp; <input type="checkbox" id="border_bottom_enabled" /></p>
+                            <div id="border_bottom_group" class="group">
+                                <p>Width: <span></span><input type="range" id="border_bottom_width" step="1" max="20"
+                                        min="0" /></p>
+                                <p>Color: <span></span><input type="color" id="border_bottom_color" /></p>
+                            </div>
+                            <p>Border Left: &nbsp; <input type="checkbox" id="border_left_enabled" /></p>
+                            <div id="border_left_group" class="group">
+                                <p>Width: <span></span><input type="range" id="border_left_width" step="1" max="20"
+                                        min="0" /></p>
+                                <p>Color: <span></span><input type="color" id="border_left_color" /></p>
+                            </div>
+                        </div>
+                    </div><br>
+                    <div class="radius">
+                        <div class="title">Border Radius</div>
+                        <p>Radius: <span></span><input type="range" id="border_radius" max="100" step="1" min="0" /></p>
+                        <p>Top Left: <span></span><input type="range" id="border_top_left_radius" max="100" step="1"
+                                min="0" />
+                        </p>
+                        <p>Top Right: <span></span><input type="range" id="border_top_right_radius" max="100" step="1"
+                                min="0" />
+                        </p>
+                        <p>Bottom Right: <span></span><input type="range" id="border_bottom_right_radius" max="100"
+                                step="1" min="0" />
+                        </p>
+                        <p>Bottom Left: <span></span><input type="range" id="border_bottom_left_radius" max="100"
+                                step="1" min="0" />
+                        </p>
+
+                    </div>
+                    <div class="fontFamily">
+                        <div class="title">Font Family</div>
+                        <p>For Title:<select id="font">
+                                <option value="times">Times New Roman</option>
+                                <option value="sans">Sans</option>
+                                <option value="Tahoma">Tahoma</option>
+                                <option value="monospace">Monospace</option>
+                                <option value="Poppins">Poppins</option>
+                                <option value="cursive">Cursive</option>
+                                <option value="Verdana">Verdana</option>
+                            </select></p>
+                        <p>For Content:<select id="font_content">
+                                <option value="times">Times New Roman</option>
+                                <option value="sans">Sans</option>
+                                <option value="Tahoma">Tahoma</option>
+                                <option value="monospace">Monospace</option>
+                                <option value="Poppins">Poppins</option>
+                                <option value="cursive">Cursive</option>
+                                <option value="Verdana">Verdana</option>
+                            </select></p>
+                    </div><br>
+                    <div class="font-size">
+                        <div class="title">Font-Size</div>
+                        <p>For Title: <span></span><input type="range" max="100" min="20" step="1" id="title_size"></p>
+                        <p>For Content: <span></span><input type="range" max="50" min="15" step="1" id="content_size">
+                        </p>
+                    </div><br>
+                    <div class="font-color">
+                        <div class="title">Text-Color</div>
+                        <p>For Title: <span></span><input type="color" id="text_color"></p>
+                        <p>For Content: <span></span><input type="color" id="content_color"></p>
+                    </div><br>
+                    <div class="background">
+                        <div class="title">Background Color</div>
+                        <p>Choose a color: <span></span>
+                            <input type="color" id="background_color">
+                        </p>
+                    </div>
+                    <div class="button" style="width: 100%; text-align: center;" id="generateBtn">Generate CSS!</div>
+                    <code>
+<pre id="generated_code"></pre>
+                    </code>
+                </div>
+            </div>
+        </div>
+        <div id="card" class="card">
+            <div id="card-title" class="title">Card Title</div>
+            <p id="card_content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis alias magni numquam,
+                exercitationem
+                facilis veritatis eius nam expedita odio aliquam!</p>
+        </div>
+    </div>
+
+    <script src="./mylibs/Design.js"></script>
+    <script src="./mylibs/mod.js"></script>
+    <script src="./scripts/main.js"></script>
+</body>
+
+</html>
